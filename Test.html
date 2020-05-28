@@ -13183,16 +13183,23 @@ div#notebook {
 </div>
 
   </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Util-block-to-encode-decode-text-with-'Secret'">Util block to encode decode text with 'Secret'<a class="anchor-link" href="#Util-block-to-encode-decode-text-with-'Secret'">&#182;</a></h4>
+</div>
+</div>
+</div>
 
   
 
-  <div class="
+  <div class="nbinteract-hide_in
       cell border-box-sizing code_cell rendered">
     <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@interact</span><span class="p">(</span><span class="n">input_string</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;Set the secret before operation&#39;</span><span class="p">,</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Input String:&#39;</span><span class="p">),</span> <span class="n">operation</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Encode&#39;</span><span class="p">,</span> <span class="s1">&#39;Decode&#39;</span><span class="p">],</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;Encode&#39;</span><span class="p">,</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Operation:&#39;</span><span class="p">,</span><span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="nd">@interact</span><span class="p">(</span><span class="n">input_string</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">placeholder</span><span class="o">=</span><span class="s1">&#39;Set the secret before operation&#39;</span><span class="p">,</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Input String:&#39;</span><span class="p">),</span> <span class="n">operation</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Encode&#39;</span><span class="p">,</span> <span class="s1">&#39;Decode&#39;</span><span class="p">],</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;Encode&#39;</span><span class="p">,</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Operation:&#39;</span><span class="p">,</span><span class="n">disabled</span><span class="o">=</span><span class="kc">False</span><span class="p">,))</span>
 <span class="k">def</span> <span class="nf">encode_decode_string</span><span class="p">(</span><span class="n">input_string</span><span class="p">,</span> <span class="n">operation</span><span class="p">):</span>
     <span class="n">operation_cmd</span> <span class="o">=</span> <span class="p">{</span> 
         <span class="s2">&quot;Encode&quot;</span> <span class="p">:</span> <span class="s2">&quot;echo </span><span class="si">{}</span><span class="s2"> | openssl enc -e -aes-256-cbc -a -salt -k </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">input_string</span><span class="p">,</span><span class="n">secret_global</span><span class="p">),</span>
@@ -13243,13 +13250,14 @@ div#notebook {
 
   
 
-  <div class="
+  <div class="nbinteract-hide_in
       cell border-box-sizing code_cell rendered">
     <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@interact_manual</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="nd">@interact_manual</span><span class="p">()</span>
 <span class="k">def</span> <span class="nf">fetch_aqa_history_data</span><span class="p">():</span>
     <span class="n">fetch_data_from_url</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">encode_decode_string</span><span class="p">(</span><span class="n">url_encoded_aqa_history_prefix</span><span class="p">,</span> <span class="s2">&quot;Decode&quot;</span><span class="p">))</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">interval_in_days_global</span><span class="p">))</span>
 </pre></div>
@@ -13290,13 +13298,14 @@ div#notebook {
 
   
 
-  <div class="
+  <div class="nbinteract-hide_in
       cell border-box-sizing code_cell rendered">
     <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nd">@interact_manual</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#HIDDEN</span>
+<span class="nd">@interact_manual</span><span class="p">()</span>
 <span class="k">def</span> <span class="nf">fetch_api_apidoc_data</span><span class="p">():</span>
     <span class="n">fetch_data_from_url</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">encode_decode_string</span><span class="p">(</span><span class="n">url_encoded_coverage_matrix</span><span class="p">,</span> <span class="s2">&quot;Decode&quot;</span><span class="p">)))</span>
 </pre></div>
